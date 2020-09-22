@@ -1,0 +1,21 @@
+{
+  "name": "ASP Detector",
+  "version": "1.0.0",
+  "description": "ASP tag links detection",
+  "permissions": [ "activeTab", "declarativeContent", "storage" ],
+  "background": {
+    "scripts": [ "background.js" ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html"
+  },
+  "options_page":"option.html",
+  "content_scripts": [{
+    "matches": [ "https://*/*" ],
+    "js": [
+      "content.js"
+    ]
+  }],
+  "manifest_version": 2
+}
